@@ -16,5 +16,26 @@ namespace LifeSaver
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RequestBloodForm rb = new RequestBloodForm();
+            rb.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bloodpackOperationsForm bbo = new bloodpackOperationsForm();
+            bbo.Show();
+            this.Hide();
+        }
     }
 }

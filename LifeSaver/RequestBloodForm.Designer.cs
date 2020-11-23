@@ -1,6 +1,6 @@
 ﻿namespace LifeSaver
 {
-    partial class ForgetpasswordForm
+    partial class RequestBloodForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // ForgetpasswordForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 717);
-            this.Name = "ForgetpasswordForm";
-            this.Text = "ForgetpasswordForm";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "RequestBloodForm";
         }
 
         #endregion

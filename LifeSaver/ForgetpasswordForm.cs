@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LifeSaver
 {
-    public partial class Form1 : Form
+    public partial class ForgetpasswordForm : Form
     {
-        public Form1()
+        public ForgetpasswordForm()
         {
             InitializeComponent();
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
@@ -26,22 +27,32 @@ namespace LifeSaver
         }
 
         public static void FrogetPass(string _email)
-        {
+        { 
 
-            string password_col = "bb_password";
-            string Quary = "select * from Bloodbank where bb_email='" + _email + "'";
-            string Password = DatabaseHandler.getvarfromDB(Quary, password_col);
-            if (Password != "Error Data not found")
+            string pattern = @"^([0-9a-zA-Z]" + //Start with a digit or alphabetical
+            @"([\+\-_\.][0-9a-zA-Z]+)*" + // No continuous or ending +-_. chars in email
+            @")+" +
+            @"@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,17})$";
+
+            if (_email != string.Empty && Regex.IsMatch(_email, pattern))
             {
+                string password_col = "bb_password";
+                string Quary = "select * from Bloodbank where bb_email='" + _email + "'";
+                string Password = DatabaseHandler.getvarfromDB(Quary, password_col);
+                if (Password != string.Empty)
+                {
 
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.Credentials = new NetworkCredential("life.saver.admon@gmail.com", "12345.life");
-                client.EnableSsl = true;
-                MailMessage mesaage = new MailMessage("life.saver.admon@gmail.com", _email, "Password reset", string.Format("You password is {0}", Password));
-                mesaage.IsBodyHtml = false;
-                client.Send(mesaage);
-                MessageBox.Show("Review your mailbox");
+                    SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                    client.Credentials = new NetworkCredential("life.saver.admon@gmail.com", "12345.life");
+                    client.EnableSsl = true;
+                    MailMessage mesaage = new MailMessage("life.saver.admon@gmail.com", _email, "Password reset", string.Format("You password is {0}", Password));
+                    mesaage.IsBodyHtml = false;
+                    client.Send(mesaage);
+                    MessageBox.Show("Review your mailbox");
+                }
             }
+            else
+                MessageBox.Show("Please Enter Correct Email");
         }
 
         //functions to access the no_of_blood_packs array ((they have to be added in the data base))
@@ -73,6 +84,25 @@ namespace LifeSaver
             string result = DatabaseHandler.getvarfromDB(q, cols);       //get th id of the bloodbank name we want to remove from
             q = "delete from BloodPacks where bpack_bloodtype='" + b + "'and bpack_bank='" + result + "'";
             return DatabaseHandler.insertdatatodatabase(q);
+        }
+
+
+        public void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
+        {
+            string[] email_col = new string[2] { "bb_email", "bb_mobile" };
+            string Quary = "select * from Bloodbank where bb_name='" + _bloodBankName + "'";
+            string[] Bloodbankinfo = DatabaseHandler.getvarfromDB(Quary, email_col);
+            if (Bloodbankinfo[0] != string.Empty)
+            {
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.Credentials = new NetworkCredential("life.saver.admon@gmail.com", "12345.life");
+                client.EnableSsl = true;
+                MailMessage mesaage = new MailMessage("life.saver.admon@gmail.com", Bloodbankinfo[0], string.Format("{0} Emergency situation", _username), string.Format("The {0} in life saver services system needs {1} pages from type {2}." +
+                    "Please contact him on {3} or ", _username, amount, _PageType, _useremail, Bloodbankinfo[1]));
+                mesaage.IsBodyHtml = false;
+                client.Send(mesaage);
+                MessageBox.Show("They will contact you shortly by mail or mobile!");
+            }
         }
 
 

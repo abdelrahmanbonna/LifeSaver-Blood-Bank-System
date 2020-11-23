@@ -40,53 +40,7 @@ namespace LifeSaver
         */
 
 
-        public override void Login(string _email, string _password) { throw new NotImplementedException(); }
-        public override void ProfileEdit(object _any) { throw new NotImplementedException(); }
-        public override void FrogetPass(string _email) {
-
-            string pattern = @"^([0-9a-zA-Z]" + //Start with a digit or alphabetical
-            @"([\+\-_\.][0-9a-zA-Z]+)*" + // No continuous or ending +-_. chars in email
-            @")+" +
-            @"@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,17})$";
-
-            if (_email != string.Empty && Regex.IsMatch(_email, pattern))
-            {
-                string password_col = "bb_password";
-                string Quary = "select * from Bloodbank where bb_email='" + _email + "'";
-                string Password = DatabaseHandler.getvarfromDB(Quary, password_col);
-                if (Password != string.Empty)
-                {
-
-                    SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                    client.Credentials = new NetworkCredential("life.saver.admon@gmail.com", "12345.life");
-                    client.EnableSsl = true;
-                    MailMessage mesaage = new MailMessage("life.saver.admon@gmail.com", _email, "Password reset", string.Format("You password is {0}", Password));
-                    mesaage.IsBodyHtml = false;
-                    client.Send(mesaage);
-                    MessageBox.Show("Review your mailbox");
-                }
-            }
-            else
-                MessageBox.Show("Please Enter Correct Email");
-        }
-        public override void DeletAccount(string _email, string _password) { throw new NotImplementedException(); }
-        public override void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
-        {
-            string [] email_col = new string[2] { "bb_email", "bb_mobile" };
-            string Quary = "select * from Bloodbank where bb_name='" + _bloodBankName + "'";
-            string []Bloodbankinfo = DatabaseHandler.getvarfromDB(Quary, email_col);
-            if (Bloodbankinfo[0] != string.Empty)
-            {
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                client.Credentials = new NetworkCredential("life.saver.admon@gmail.com", "12345.life");
-                client.EnableSsl = true;
-                MailMessage mesaage = new MailMessage("life.saver.admon@gmail.com", Bloodbankinfo[0], string.Format("{0} Emergency situation",_username), string.Format("The {0} in life saver services system needs {1} pages from type {2}." +
-                    "Please contact him on {3} or ",_username, amount, _PageType, _useremail, Bloodbankinfo[1]));
-                mesaage.IsBodyHtml = false;
-                client.Send(mesaage);
-                MessageBox.Show("They will contact you shortly by mail or mobile!");
-            }
-        }
+        
 
     }
 }

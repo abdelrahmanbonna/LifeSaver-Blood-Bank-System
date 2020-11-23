@@ -16,5 +16,26 @@ namespace LifeSaver
         {
             InitializeComponent();
         }
+
+        private void bankButton_Click(object sender, EventArgs e)
+        {
+            Bloodpackoperations.SearchbyBloodbank(ref dataGridView1,searchText.Text);
+        }
+
+        private void packButton_Click(object sender, EventArgs e)
+        {
+            blood_types[] types = new blood_types[] {
+                blood_types.A_pos,
+                blood_types.A_neg,
+                blood_types.B_pos,
+                blood_types.B_neg,
+                blood_types.AB_pos,
+                blood_types.AB_neg,
+                blood_types.O_pos,
+                blood_types.O_neg
+            };
+
+            Bloodpackoperations.SearchbyBloodtype(ref dataGridView1, types[bTypeComboBox.SelectedIndex]);
+        }
     }
 }

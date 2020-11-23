@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BloodBank.cs" />
+    <Compile Include="BloodBankEditProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BloodBankEditProfileForm.Designer.cs">
+      <DependentUpon>BloodBankEditProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BloodBankHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserEditProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEditProfileForm.Designer.cs">
+      <DependentUpon>UserEditProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>

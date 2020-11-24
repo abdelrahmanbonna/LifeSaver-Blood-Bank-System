@@ -314,15 +314,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 132;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Maroon;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(760, 321);
+            this.button2.Location = new System.Drawing.Point(700, 317);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 31);
+            this.button2.Size = new System.Drawing.Size(90, 34);
             this.button2.TabIndex = 131;
             this.button2.Text = "Browse";
             this.button2.UseVisualStyleBackColor = false;

@@ -37,5 +37,12 @@ namespace LifeSaver
 
             Bloodpackoperations.SearchbyBloodtype(ref dataGridView1, types[bTypeComboBox.SelectedIndex]);
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            UserHomeForm rb = new UserHomeForm();
+            rb.Show();
+            this.Hide();
+        }
     }
 }

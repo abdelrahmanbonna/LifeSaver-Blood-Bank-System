@@ -35,5 +35,12 @@ namespace LifeSaver
             blood_types Type = (blood_types)Enum.Parse(typeof(blood_types), typeCombo.Text);
             BloodbankOperations.remove_blood_type(Type, bbNameBox.Text);
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            BloodBankHomeForm uh = new BloodBankHomeForm();
+            uh.Show();
+            this.Hide();
+        }
     }
 }

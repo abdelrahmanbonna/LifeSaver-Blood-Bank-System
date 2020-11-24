@@ -10,6 +10,34 @@ namespace LifeSaver
         private static SqlConnection con = new SqlConnection(conString);
 
         // Gets variable from DB
+        public static DataTable getMultiRows(string query, string wantedcol= null)
+        {
+            SqlDataAdapter com = new SqlDataAdapter(query, con);
+
+            con.Open();
+            if (con.State == ConnectionState.Broken)
+            {
+                MessageBox.Show("DataBase is unreachable please check your connection");
+                con.Close();
+                return null;
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                com.Fill(dt);
+                if (dt.Rows.Count != 0)
+                {
+                    con.Close();
+                    return dt;
+                }
+                else
+                {
+                    MessageBox.Show("Error Data not found");
+                    con.Close();
+                    return null;
+                }
+            }
+        }
         public static string getvarfromDB(string query, string wantedcol)
         {
             SqlDataAdapter com = new SqlDataAdapter(query, con);

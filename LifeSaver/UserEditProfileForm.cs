@@ -12,6 +12,7 @@ namespace LifeSaver
 {
     public partial class UserEditProfileForm : Form
     {
+        string imgloc = "";
         public UserEditProfileForm()
         {
             InitializeComponent();
@@ -45,6 +46,38 @@ namespace LifeSaver
         {
             UserOperations.ProfileEdithealth(textBox6.Text, textBox5.Text);
             MessageBox.Show("HealthCondition edited succesfully");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "JPG Flies (*.jpg)|*.jpg|GIF Files (*.gif)|*gif |ALL Files (*.*)|*.*";
+                dlg.Title = "Select Picture";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    imgloc = dlg.FileName.ToString();
+                    pictureBox1.ImageLocation = imgloc;
+
+                }
+            }
+            catch (Exception es)
+            { MessageBox.Show(es.Message); }
+            UserOperations.ProfileEditemail(textBox6.Text, imgloc);
+            MessageBox.Show("Picture edited succesfully");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            UserOperations.ProfileEditdelet(textBox6.Text, "1");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            UserHomeForm uh = new UserHomeForm();
+            uh.Show();
+            this.Hide();
         }
     }
 }

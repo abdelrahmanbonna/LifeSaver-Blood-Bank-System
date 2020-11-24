@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,38 @@ namespace LifeSaver
 {
     public partial class SearchForm : Form
     {
+        private static string conString = @"data source = (local);database = Bloodbank;integrated security = SSPI";
+        private static SqlConnection con = new SqlConnection(conString);
         public SearchForm()
         {
             InitializeComponent();
         }
 
+        public void LoadTable(string q)
+        {
+            try
+            {
+                SqlCommand Cmd = new SqlCommand(q, con);
+                con.Open();
+                SqlDataReader DR = Cmd.ExecuteReader();
+                if (DR.HasRows)
+                {
+                    BindingSource source = new BindingSource();
+                    source.DataSource = DR;
+                    dataGridView1.DataSource = source;
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void bankButton_Click(object sender, EventArgs e)
         {
-            Bloodpackoperations.SearchbyBloodbank(ref dataGridView1,searchText.Text);
+            //add fix
+            LoadTable("select bb_name,bb_email,bb_mobile,bb_address,bb_type from BloodBanks where bb_name='" + searchText.Text + "'");
         }
 
         private void packButton_Click(object sender, EventArgs e)
@@ -35,7 +60,8 @@ namespace LifeSaver
                 blood_types.O_neg
             };
 
-            Bloodpackoperations.SearchbyBloodtype(ref dataGridView1, types[bTypeComboBox.SelectedIndex]);
+            //add fix
+            LoadTable("select BloodBanks.bb_name,BloodBanks.bb_email,BloodBanks.bb_mobile,BloodBanks.bb_address,BloodBanks.bb_type from BloodBanks INNER JOIN BloodPacks ON bb_id=bpack_bank and bpack_bloodtype='" + types[bTypeComboBox.SelectedIndex].ToString() + "'");
         }
 
         private void button8_Click(object sender, EventArgs e)

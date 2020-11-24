@@ -16,5 +16,24 @@ namespace LifeSaver
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            blood_types Type = (blood_types)Enum.Parse(typeof(blood_types), typeCombo.Text);
+            DateTime expireDT = dateTimePicker1.Value.Date + dateTimePicker1.Value.TimeOfDay;
+            BloodbankOperations.add_blood_type(Type, bbNameBox.Text, expireDT);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            blood_types Type = (blood_types)Enum.Parse(typeof(blood_types), typeCombo.Text);
+            BloodbankOperations.remove_blood_type(Type, bbNameBox.Text);
+        }
     }
 }

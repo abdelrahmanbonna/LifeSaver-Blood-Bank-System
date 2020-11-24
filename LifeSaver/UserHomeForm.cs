@@ -38,5 +38,12 @@ namespace LifeSaver
             uef.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RequestBloodForm uef = new RequestBloodForm("user");
+            uef.Show();
+            this.Hide();
+        }
     }
 }

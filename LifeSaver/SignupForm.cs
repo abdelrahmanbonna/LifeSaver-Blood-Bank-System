@@ -13,6 +13,7 @@ namespace LifeSaver
 {
     public partial class SignupForm : Form
     {
+        string imgloc = "";
         public SignupForm()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace LifeSaver
 
             User user = new User();
             user.Name = nameField.Text;
-
+            user.pictureLoc = imgloc;
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match match = regex.Match(emailField.Text);
             if (!match.Success)
@@ -82,6 +83,27 @@ namespace LifeSaver
             }    
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "JPG Flies (*.jpg)|*.jpg|GIF Files (*.gif)|*gif |ALL Files (*.*)|*.*";
+                dlg.Title = "Select Picture";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    imgloc = dlg.FileName.ToString();
+                    pictureBox1.ImageLocation = imgloc;
 
+                }
+            }
+            catch (Exception es)
+            { MessageBox.Show(es.Message); }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace LifeSaver
         public string HealthCond { set; get; }
         public blood_types BloodType { set; get; }
         public string mobileNo { set; get; }
-        public byte[] picture { set; get; }
+        public string pictureLoc { set; get; }
       
     }
 }

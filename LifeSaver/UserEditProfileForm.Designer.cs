@@ -43,8 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,12 +121,13 @@
             this.button6.BackColor = System.Drawing.Color.Maroon;
             this.button6.Font = new System.Drawing.Font("Tahoma", 12F);
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(298, 376);
+            this.button6.Location = new System.Drawing.Point(300, 372);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(196, 45);
             this.button6.TabIndex = 5;
             this.button6.Text = "Delete Your Account";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox1
             // 
@@ -189,19 +193,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Location = new System.Drawing.Point(-1, -3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(804, 33);
+            this.panel2.Size = new System.Drawing.Size(804, 37);
             this.panel2.TabIndex = 131;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(535, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 134;
-            this.pictureBox1.TabStop = false;
             // 
             // button7
             // 
@@ -216,11 +212,42 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(535, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 134;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.Image = global::LifeSaver.Properties.Resources.home;
+            this.button8.Location = new System.Drawing.Point(0, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(49, 33);
+            this.button8.TabIndex = 135;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(478, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 18);
+            this.label3.TabIndex = 152;
+            this.label3.Text = "*";
+            // 
             // UserEditProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.panel1);
@@ -240,6 +267,7 @@
             this.Controls.Add(this.button1);
             this.Name = "UserEditProfileForm";
             this.Text = "UserEditProfileForm";
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -265,5 +293,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label3;
     }
 }

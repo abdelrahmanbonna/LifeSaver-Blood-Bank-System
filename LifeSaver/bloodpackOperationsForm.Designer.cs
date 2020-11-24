@@ -40,23 +40,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(-11, 423);
+            this.panel1.Location = new System.Drawing.Point(1, 318);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(636, 27);
+            this.panel1.Size = new System.Drawing.Size(495, 33);
             this.panel1.TabIndex = 62;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Location = new System.Drawing.Point(-11, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(636, 27);
+            this.panel2.Size = new System.Drawing.Size(507, 34);
             this.panel2.TabIndex = 61;
             // 
             // typeCombo
@@ -71,7 +73,7 @@
             "AB_neg",
             "O_pos",
             "O_neg"});
-            this.typeCombo.Location = new System.Drawing.Point(280, 141);
+            this.typeCombo.Location = new System.Drawing.Point(241, 123);
             this.typeCombo.Name = "typeCombo";
             this.typeCombo.Size = new System.Drawing.Size(142, 21);
             this.typeCombo.TabIndex = 64;
@@ -81,7 +83,7 @@
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.nameLabel.Location = new System.Drawing.Point(64, 140);
+            this.nameLabel.Location = new System.Drawing.Point(25, 122);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(44, 18);
             this.nameLabel.TabIndex = 89;
@@ -92,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(64, 78);
+            this.label1.Location = new System.Drawing.Point(25, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 18);
             this.label1.TabIndex = 90;
@@ -100,7 +102,7 @@
             // 
             // bbNameBox
             // 
-            this.bbNameBox.Location = new System.Drawing.Point(280, 76);
+            this.bbNameBox.Location = new System.Drawing.Point(241, 58);
             this.bbNameBox.Name = "bbNameBox";
             this.bbNameBox.Size = new System.Drawing.Size(142, 20);
             this.bbNameBox.TabIndex = 91;
@@ -110,7 +112,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(415, 55);
+            this.label2.Location = new System.Drawing.Point(376, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 18);
             this.label2.TabIndex = 92;
@@ -121,7 +123,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(64, 205);
+            this.label3.Location = new System.Drawing.Point(25, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 18);
             this.label3.TabIndex = 94;
@@ -129,7 +131,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 205);
+            this.dateTimePicker1.Location = new System.Drawing.Point(210, 187);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 95;
@@ -139,7 +141,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(415, 120);
+            this.label4.Location = new System.Drawing.Point(376, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 18);
             this.label4.TabIndex = 96;
@@ -150,7 +152,7 @@
             this.button2.BackColor = System.Drawing.Color.Maroon;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(167, 332);
+            this.button2.Location = new System.Drawing.Point(119, 253);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 32);
             this.button2.TabIndex = 97;
@@ -163,7 +165,7 @@
             this.button1.BackColor = System.Drawing.Color.Maroon;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(371, 333);
+            this.button1.Location = new System.Drawing.Point(283, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 31);
             this.button1.TabIndex = 98;
@@ -171,24 +173,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // button8
             // 
-            this.button3.BackColor = System.Drawing.Color.Maroon;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(41, 376);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 31);
-            this.button3.TabIndex = 99;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button8.Image = global::LifeSaver.Properties.Resources.home;
+            this.button8.Location = new System.Drawing.Point(12, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(49, 33);
+            this.button8.TabIndex = 152;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // bloodpackOperationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 450);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(496, 353);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
@@ -203,6 +202,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "bloodpackOperationsForm";
             this.Text = "bloodpackOperationsForm";
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +222,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button8;
     }
 }

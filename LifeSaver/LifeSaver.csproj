@@ -190,5 +190,8 @@
   <ItemGroup>
     <None Include="Resources\finallogouticon.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

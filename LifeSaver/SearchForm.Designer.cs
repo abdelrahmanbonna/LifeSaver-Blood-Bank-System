@@ -33,45 +33,59 @@
             this.packButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bankButton
             // 
-            this.bankButton.Location = new System.Drawing.Point(357, 84);
+            this.bankButton.BackColor = System.Drawing.Color.Maroon;
+            this.bankButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.bankButton.ForeColor = System.Drawing.Color.White;
+            this.bankButton.Location = new System.Drawing.Point(268, 68);
+            this.bankButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bankButton.Name = "bankButton";
-            this.bankButton.Size = new System.Drawing.Size(180, 36);
+            this.bankButton.Size = new System.Drawing.Size(135, 29);
             this.bankButton.TabIndex = 0;
             this.bankButton.Text = "Search By Bank";
-            this.bankButton.UseVisualStyleBackColor = true;
+            this.bankButton.UseVisualStyleBackColor = false;
             this.bankButton.Click += new System.EventHandler(this.bankButton_Click);
             // 
             // searchText
             // 
             this.searchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchText.Location = new System.Drawing.Point(90, 86);
+            this.searchText.Location = new System.Drawing.Point(68, 70);
+            this.searchText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(247, 30);
+            this.searchText.Size = new System.Drawing.Size(186, 26);
             this.searchText.TabIndex = 2;
             // 
             // packButton
             // 
-            this.packButton.Location = new System.Drawing.Point(357, 141);
+            this.packButton.BackColor = System.Drawing.Color.Maroon;
+            this.packButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.packButton.ForeColor = System.Drawing.Color.White;
+            this.packButton.Location = new System.Drawing.Point(268, 115);
+            this.packButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.packButton.Name = "packButton";
-            this.packButton.Size = new System.Drawing.Size(180, 36);
+            this.packButton.Size = new System.Drawing.Size(135, 29);
             this.packButton.TabIndex = 3;
             this.packButton.Text = "Search By Blood Type";
-            this.packButton.UseVisualStyleBackColor = true;
+            this.packButton.UseVisualStyleBackColor = false;
             this.packButton.Click += new System.EventHandler(this.packButton_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(94, 261);
+            this.dataGridView1.Location = new System.Drawing.Point(68, 172);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(243, 211);
+            this.dataGridView1.Size = new System.Drawing.Size(335, 214);
             this.dataGridView1.TabIndex = 4;
             // 
             // bTypeComboBox
@@ -87,24 +101,56 @@
             "AB-",
             "O+",
             "O-"});
-            this.bTypeComboBox.Location = new System.Drawing.Point(90, 149);
+            this.bTypeComboBox.Location = new System.Drawing.Point(68, 121);
+            this.bTypeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bTypeComboBox.Name = "bTypeComboBox";
-            this.bTypeComboBox.Size = new System.Drawing.Size(243, 28);
+            this.bTypeComboBox.Size = new System.Drawing.Size(183, 25);
             this.bTypeComboBox.TabIndex = 16;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Location = new System.Drawing.Point(0, 402);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(481, 27);
+            this.panel1.TabIndex = 109;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(481, 33);
+            this.panel2.TabIndex = 108;
+            // 
+            // button8
+            // 
+            this.button8.Image = global::LifeSaver.Properties.Resources.home;
+            this.button8.Location = new System.Drawing.Point(0, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(49, 33);
+            this.button8.TabIndex = 136;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 527);
+            this.ClientSize = new System.Drawing.Size(481, 428);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.bTypeComboBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.packButton);
             this.Controls.Add(this.searchText);
             this.Controls.Add(this.bankButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +163,8 @@
         private System.Windows.Forms.Button packButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox bTypeComboBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button8;
     }
 }

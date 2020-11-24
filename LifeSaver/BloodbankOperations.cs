@@ -86,8 +86,16 @@ namespace LifeSaver
             return DatabaseHandler.insertdatatodatabase(q);
         }
 
+        public static bool ProfileEdit(string bb_name, string bb_email, string bb_pass, string bb_pic, string oldemail, string bb_address, string bb_mobile, bool checkdelete)
+        {
+            string QuaryOldEmail = "select * from Bloodbank where bb_email='" + oldemail + "'";
+            string value = DatabaseHandler.getvarfromDB(QuaryOldEmail, "bb_id");
 
-        public void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
+            string Editquary = "update Bloodbank set bb_name ='" + bb_name + "'bb_email='" + bb_email + "'bb_password='" + bb_pass + "'bb_picture='" + bb_pic + "'bb_address='" + bb_address + "'bb_mobile='" + bb_mobile + "'bb_deleted='" + checkdelete + "'where bb_id='" + value + "'";
+            return DatabaseHandler.insertdatatodatabase(Editquary);
+        }
+
+        public static void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
         {
             string[] email_col = new string[2] { "bb_email", "bb_mobile" };
             string Quary = "select * from Bloodbank where bb_name='" + _bloodBankName + "'";

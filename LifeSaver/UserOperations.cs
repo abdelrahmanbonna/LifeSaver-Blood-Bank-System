@@ -126,6 +126,14 @@ namespace LifeSaver
             q = "update Users SET users_name ='" + new_name + "' where users_id='" + result + "'";
             return DatabaseHandler.insertdatatodatabase(q);
         }
+        public static bool ProfileEditpic(string email, string new_pic)
+        {
+            string cols = "users_id";
+            string q = "select * from Users where users_email='" + email + "'";
+            string result = DatabaseHandler.getvarfromDB(q, cols);       //get th id of the user email we want to edit
+            q = "update Users SET users_email ='" + new_pic + "' where users_id='" + result + "'";
+            return DatabaseHandler.insertdatatodatabase(q);
+        }
         public static bool ProfileEditemail(string email,string new_email)
         {
             string cols = "users_id";

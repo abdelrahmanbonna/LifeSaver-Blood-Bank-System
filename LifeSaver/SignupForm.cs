@@ -100,5 +100,10 @@ namespace LifeSaver
             catch (Exception es)
             { MessageBox.Show(es.Message); }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

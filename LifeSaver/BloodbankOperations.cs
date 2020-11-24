@@ -87,7 +87,7 @@ namespace LifeSaver
         }
 
 
-        public void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
+        public static void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
         {
             string[] email_col = new string[2] { "bb_email", "bb_mobile" };
             string Quary = "select * from Bloodbank where bb_name='" + _bloodBankName + "'";

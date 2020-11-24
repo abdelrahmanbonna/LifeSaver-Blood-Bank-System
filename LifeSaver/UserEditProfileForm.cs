@@ -67,5 +67,17 @@ namespace LifeSaver
             UserOperations.ProfileEditemail(textBox6.Text, imgloc);
             MessageBox.Show("Picture edited succesfully");
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            UserOperations.ProfileEditdelet(textBox6.Text, "1");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            UserHomeForm uh = new UserHomeForm();
+            uh.Show();
+            this.Hide();
+        }
     }
 }

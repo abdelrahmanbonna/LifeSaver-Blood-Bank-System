@@ -115,8 +115,14 @@
       <DependentUpon>UserHomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserOperations.cs" />
+    <EmbeddedResource Include="BloodBankEditProfileForm.resx">
+      <DependentUpon>BloodBankEditProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BloodBankHomeForm.resx">
       <DependentUpon>BloodBankHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bloodpackOperationsForm.resx">
+      <DependentUpon>bloodpackOperationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgetpasswordForm.resx">
       <DependentUpon>ForgetpasswordForm.cs</DependentUpon>
@@ -134,6 +140,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RequestBloodForm.resx">
+      <DependentUpon>RequestBloodForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finallogouticon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

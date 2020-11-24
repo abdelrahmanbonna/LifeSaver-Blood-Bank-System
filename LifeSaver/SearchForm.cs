@@ -63,5 +63,12 @@ namespace LifeSaver
             //add fix
             LoadTable("select BloodBanks.bb_name,BloodBanks.bb_email,BloodBanks.bb_mobile,BloodBanks.bb_address,BloodBanks.bb_type from BloodBanks INNER JOIN BloodPacks ON bb_id=bpack_bank and bpack_bloodtype='" + types[bTypeComboBox.SelectedIndex].ToString() + "'");
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            UserHomeForm rb = new UserHomeForm();
+            rb.Show();
+            this.Hide();
+        }
     }
 }

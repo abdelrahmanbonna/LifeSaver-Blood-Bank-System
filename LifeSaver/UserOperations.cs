@@ -131,7 +131,7 @@ namespace LifeSaver
             string cols = "users_id";
             string q = "select * from Users where users_email='" + email + "'";
             string result = DatabaseHandler.getvarfromDB(q, cols);       //get th id of the user email we want to edit
-            q = "update Users SET users_email ='" + new_pic + "' where users_id='" + result + "'";
+            q = "update Users SET users_pictures ='" + new_pic + "' where users_id='" + result + "'";
             return DatabaseHandler.insertdatatodatabase(q);
         }
         public static bool ProfileEditemail(string email,string new_email)
@@ -167,7 +167,14 @@ namespace LifeSaver
             return DatabaseHandler.insertdatatodatabase(q);
         }
 
-
+        public static bool ProfileEditdelet(string email, string stats)
+        {
+            string cols = "users_id";
+            string q = "select * from Users where users_email='" + email + "'";
+            string result = DatabaseHandler.getvarfromDB(q, cols);       //get th id of the user email we want to edit
+            q = "update Users SET users_deleted ='" + stats + "' where users_id='" + result + "'";
+            return DatabaseHandler.insertdatatodatabase(q);
+        }
         public static void Request_Blood(string _username, string _useremail, string _bloodBankName, string _PageType, int amount)
         {
             string email_col = "bb_email";
